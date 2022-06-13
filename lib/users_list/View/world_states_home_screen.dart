@@ -43,6 +43,8 @@ class _WorldStatesState extends State<WorldStates>
         return true;
       },
       child: Scaffold(
+        resizeToAvoidBottomInset: false, // set it to false
+
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(15.0),
@@ -56,26 +58,31 @@ class _WorldStatesState extends State<WorldStates>
                       if (!snapshot.hasData) {
                         return SpinKitWidget(controller: _controller);
                       } else {
-                        return Column(
+                        return ListView(
+                          physics: NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
                           children: [
-                            // Pie chart widget
-                            PieChartWidget(snapshot),
+                            Column(
+                              children: [
+                                // Pie chart widget
+                                PieChartWidget(snapshot),
 
-                            SingleChildScrollView(
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(vertical: 30.h),
+                                Column(
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(vertical: 30.h),
 
-                                    // Detail_widget
-                                    child: DetailWidget(snapshot),
-                                  ),
-                                  // Button Widgets
-                                  const TrackCountryButton()
-                                ],
-                              ),
-                            )
+                                      // Detail_widget
+                                      child: DetailWidget(snapshot),
+                                    ),
+                                    // Button Widgets
+                                    const TrackCountryButton()
+                                  ],
+                                )
+                              ],
+                            ),
                           ],
                         );
                       }
@@ -88,4 +95,3 @@ class _WorldStatesState extends State<WorldStates>
     );
   }
 }
-

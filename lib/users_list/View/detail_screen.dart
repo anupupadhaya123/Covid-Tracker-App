@@ -97,10 +97,21 @@ class _DetailScreenState extends State<DetailScreen> {
                 ),
                 Positioned(
                   child: CircleAvatar(
-                    radius: 40.r,
-                    backgroundImage: NetworkImage(
-                      widget.image,
+                    child: SizedBox(
+                      width: 180.w,
+                      height: 180.h,
+                      child: ClipOval(
+                        child: Image.network(
+                          widget.image,
+                          fit: BoxFit.fitHeight,
+                        ),
+                      ),
                     ),
+                    radius: 40.r,
+
+                    // backgroundImage: NetworkImage(
+                    //   widget.image,
+                    // ),
                   ),
                 ),
               ],
