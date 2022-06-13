@@ -1,11 +1,9 @@
 import '../../widgets/search_loading_widget.dart';
 import '../../widgets/show_country_search.dart';
 import '/utilities/constant.dart';
-import '/users_list/View/detail_screen.dart';
 import '/users_list/ViewModel/world_sates_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shimmer/shimmer.dart';
 
 class CountriesListScreen extends StatefulWidget {
   const CountriesListScreen({Key? key}) : super(key: key);
@@ -22,9 +20,12 @@ class _CountriesListScreenState extends State<CountriesListScreen> {
     WorldStatesViewModel newsListViewModel = WorldStatesViewModel();
     return Scaffold(
       appBar: AppBar(
-        elevation: 1,
-        backgroundColor: bgColor,
-        iconTheme: const IconThemeData(color: Colors.black),
+        backgroundColor: Theme.of(context).brightness == Brightness.light
+            ? bgColor
+            : greyColor,
+        iconTheme: Theme.of(context).brightness == Brightness.light
+            ? IconThemeData(color: Colors.black)
+            : IconThemeData(color: Colors.white),
       ),
       body: SafeArea(
         child: Column(
@@ -70,5 +71,4 @@ class _CountriesListScreenState extends State<CountriesListScreen> {
       ),
     );
   }
-
 }

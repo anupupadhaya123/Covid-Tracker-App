@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DetailScreen extends StatefulWidget {
- final String image;
- final String name;
+  final String image;
+  final String name;
   final int totalCases,
       totalDeaths,
       totalRecovered,
@@ -16,8 +16,8 @@ class DetailScreen extends StatefulWidget {
       todayRecovered,
       test;
 
-   // ignore: use_key_in_widget_constructors
-   const DetailScreen({
+  // ignore: use_key_in_widget_constructors
+  const DetailScreen({
     required this.image,
     required this.name,
     required this.totalCases,
@@ -38,10 +38,22 @@ class _DetailScreenState extends State<DetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
-        title: Text(widget.name, style: headingStyle.copyWith(color: Colors.black),),
+        backgroundColor: Theme.of(context).brightness == Brightness.light
+            ? bgColor
+            : greyColor,
+        iconTheme: Theme.of(context).brightness == Brightness.light
+            ? const IconThemeData(color: Colors.black)
+            : const IconThemeData(color: Colors.white),
+        title: Theme.of(context).brightness == Brightness.light
+            ? Text(
+                widget.name,
+                style: headingStyle.copyWith(color: Colors.black),
+              )
+            : Text(
+                widget.name,
+                style: headingStyle.copyWith(color: Colors.white),
+              ),
         centerTitle: true,
-        backgroundColor: bgColor,
       ),
       body: SafeArea(
         child: Column(
@@ -52,8 +64,7 @@ class _DetailScreenState extends State<DetailScreen> {
               alignment: Alignment.topCenter,
               children: [
                 Padding(
-                  padding: EdgeInsets.only(
-                      top: 50.h),
+                  padding: EdgeInsets.only(top: 50.h),
                   child: Card(
                     child: Column(
                       children: [
@@ -88,9 +99,8 @@ class _DetailScreenState extends State<DetailScreen> {
                   child: CircleAvatar(
                     radius: 40.r,
                     backgroundImage: NetworkImage(
-                      widget.image, 
-                      
-                      ),
+                      widget.image,
+                    ),
                   ),
                 ),
               ],
@@ -101,4 +111,3 @@ class _DetailScreenState extends State<DetailScreen> {
     );
   }
 }
-

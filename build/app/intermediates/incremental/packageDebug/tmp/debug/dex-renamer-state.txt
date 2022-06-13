@@ -1,4 +1,4 @@
-#Mon Jun 13 09:58:20 NPT 2022
+#Mon Jun 13 11:11:54 NPT 2022
 base.0=D\:\\ch Internship\\Flutter-Covid-19-App\\Flutter-Covid-19-App\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

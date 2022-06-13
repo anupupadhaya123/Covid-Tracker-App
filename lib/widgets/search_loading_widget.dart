@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
 
+// ignore: non_constant_identifier_names
 ListView SearchLoadingWidget() {
   return ListView.builder(
     itemCount: 10,

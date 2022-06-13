@@ -1,3 +1,5 @@
+import 'package:covid_tracker/utilities/theme.dart';
+
 import '/Utilities/constant.dart';
 import '/users_list/View/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -5,7 +7,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() async {
-
   //Forcing app to run only in potrait
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations(
@@ -33,10 +34,10 @@ class MyApp extends StatelessWidget {
               data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
               child: widget!);
         },
-        theme: ThemeData(
-          fontFamily: "Outfit",
-          scaffoldBackgroundColor: bgColor,
-        ),
+        theme: lightTheme,
+        darkTheme: darkTheme,
+        themeMode: ThemeMode.system,
+
         home: const SplashScreen(),
       ),
     );
