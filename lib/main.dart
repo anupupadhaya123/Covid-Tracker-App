@@ -1,5 +1,5 @@
-import 'package:covid_tracker/Utilities/constant.dart';
-import 'package:covid_tracker/users_list/View/splash_screen.dart';
+import '/Utilities/constant.dart';
+import '/users_list/View/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,11 +7,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 void main() async {
 
   //Forcing app to run only in potrait
-   WidgetsFlutterBinding.ensureInitialized();
-          await SystemChrome.setPreferredOrientations(
-              [DeviceOrientation.portraitUp],
-          );
-          
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations(
+    [DeviceOrientation.portraitUp],
+  );
+
   runApp(const MyApp());
 }
 
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         // Adjusting various widget as per the scale factor of the display
         builder: (context, widget) {
           return MediaQuery(
-              data: MediaQuery.of(context).copyWith(textScaleFactor : 1.0),
+              data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
               child: widget!);
         },
         theme: ThemeData(

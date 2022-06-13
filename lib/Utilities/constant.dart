@@ -13,7 +13,7 @@ class AppUrl {
 }
 
 // Constant color of piechart used in world_state.dart page
-final colorList = <Color>[
+ const colorList =  <Color>[
     Color(0xff4285F4),
     Color(0xff1aa260),
     Color(0xffde5246),

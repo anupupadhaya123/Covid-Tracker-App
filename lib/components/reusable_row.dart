@@ -1,7 +1,8 @@
-import 'package:covid_tracker/Utilities/constant.dart';
+import '/utilities/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+// ignore: must_be_immutable
 class ReusableRow extends StatelessWidget {
   String title, value;
   ReusableRow({Key? key, required this.title, required this.value})
@@ -26,7 +27,7 @@ class ReusableRow extends StatelessWidget {
           SizedBox(
             height: 5.h,
           ),
-          Divider()
+          const Divider()
         ],
       ),
     );

@@ -1,14 +1,14 @@
 import 'dart:core';
 
-import 'package:covid_tracker/Utilities/constant.dart';
-import 'package:covid_tracker/components/reusable_row.dart';
+import '/utilities/constant.dart';
+import '/components/reusable_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DetailScreen extends StatefulWidget {
-  String image;
-  String name;
-  int totalCases,
+ final String image;
+ final String name;
+  final int totalCases,
       totalDeaths,
       totalRecovered,
       active,
@@ -16,7 +16,8 @@ class DetailScreen extends StatefulWidget {
       todayRecovered,
       test;
 
-  DetailScreen({
+   // ignore: use_key_in_widget_constructors
+   const DetailScreen({
     required this.image,
     required this.name,
     required this.totalCases,
@@ -37,7 +38,7 @@ class _DetailScreenState extends State<DetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Colors.black),
         title: Text(widget.name, style: headingStyle.copyWith(color: Colors.black),),
         centerTitle: true,
         backgroundColor: bgColor,
