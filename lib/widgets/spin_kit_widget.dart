@@ -14,11 +14,15 @@ class SpinKitWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       flex: 1,
-      child: SpinKitFadingCircle(
+      child:Theme.of(context).brightness == Brightness.light ?  SpinKitFadingCircle(
         color: Colors.black,
         size: 50.h,
         controller: _controller,
-      ),
+      ) : SpinKitFadingCircle(
+        color: Colors.white,
+        size: 50.h,
+        controller: _controller,
+      ) ,
     );
   }
 }

@@ -13,7 +13,6 @@ class CountriesListScreen extends StatefulWidget {
 }
 
 class _CountriesListScreenState extends State<CountriesListScreen> {
-  TextEditingController searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
