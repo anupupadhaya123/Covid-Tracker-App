@@ -1,6 +1,5 @@
 import 'package:covid_tracker/utilities/theme.dart';
 
-import '/Utilities/constant.dart';
 import '/users_list/View/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

@@ -24,8 +24,8 @@ class _CountriesListScreenState extends State<CountriesListScreen> {
             ? bgColor
             : greyColor,
         iconTheme: Theme.of(context).brightness == Brightness.light
-            ? IconThemeData(color: Colors.black)
-            : IconThemeData(color: Colors.white),
+            ? const IconThemeData(color: Colors.black)
+            : const IconThemeData(color: Colors.white),
       ),
       body: SafeArea(
         child: Column(
